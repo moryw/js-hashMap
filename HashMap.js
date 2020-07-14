@@ -28,13 +28,22 @@ class HashMap {
     this.hashmap[arrayIndex] = value
   }
 
+  retrieve(key) {
+    const arrayIndex = this.hash(key)
+    return this.hashmap[arrayIndex]
+  }
+
 }
 
 // const hashMap = new HashMap(3)
 // console.log(hashMap.hash('id'))
 
-const employees = new HashMap(3)
-employees.assign('34-567', 'Mara')
-console.log(employees.hashmap)
+// const employees = new HashMap(3)
+// employees.assign('34-567', 'Mara')
+// console.log(employees.hashmap)
+
+const glossary = new HashMap(3)
+glossary.assign('Gloria', 'Grizelda Vallejo Melendez Martinez')
+console.log(glossary.retrieve('Gloria'));
 
 module.exports = HashMap;
