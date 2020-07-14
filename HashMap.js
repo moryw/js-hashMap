@@ -10,8 +10,8 @@ class HashMap {
     for (let i = 0; i < key.length; i++) {
       hashCode += key.charCodeAt(i)
       hashCode2 += hashCode2 + key.charCodeAt(i)
-      // console.log(key.charCodeAt(i))
-      // console.log(`Hash code 1 = ${hashCode}`)
+      console.log(key.charCodeAt(i))
+      console.log(`Hash code 1 = ${hashCode}`)
       // console.log(`Hash code 2 = ${hashCode2}`)
     }
 
@@ -23,9 +23,18 @@ class HashMap {
     return hashCode
   }
 
+  assign(key, value) {
+    const arrayIndex = this.hash(key)
+    this.hashmap[arrayIndex] = value
+  }
+
 }
 
-const hashMap = new HashMap(3)
-console.log(hashMap.hash('id'))
+// const hashMap = new HashMap(3)
+// console.log(hashMap.hash('id'))
+
+const employees = new HashMap(3)
+employees.assign('34-567', 'Mara')
+console.log(employees.hashmap)
 
 module.exports = HashMap;
