@@ -43,7 +43,7 @@ class HashMap {
 // console.log(employees.hashmap)
 
 const glossary = new HashMap(3)
-glossary.assign('Gloria', 'Grizelda Vallejo Melendez Martinez')
-console.log(glossary.retrieve('Gloria'));
+glossary.assign('semordnilap', 'Words that form different words when reversed')
+console.log(glossary.retrieve('semordnilap'));
 
 module.exports = HashMap;
