@@ -57,39 +57,4 @@ class HashMap {
   }
 }
 
-const collision = new HashMap(5);
-// console.log(collision.hash('One'));
-// console.log(collision.hash('Two'));
-// console.log(collision.hash('Sixteen'));
-// console.log(collision.hash('Seventeen'));
-// console.log(collision.hash('Twenty'));
-
-collision.assign('Two', 'First')
-collision.assign('Sixteen', 'First')
-collision.assign('One', 'First')
-collision.assign('Twenty', 'First')
-collision.assign('Seventeen', 'First')
-collision.hashmap.forEach((item) => {
-  console.log(item.head);
-});
-
-collision.assign('deer', 'Second')
-collision.hashmap.forEach((item) => {
-  console.log(item.head);
-});
-
-// console.log(collision.hashmap[2].head.data);
-// collision.assign('deer', 'house')
-// console.log(collision.hashmap[2].head.data);
-// collision.assign('deer', 'garden')
-// console.log(collision.hashmap[2].head.data);
-
-// const linkedList = collision.hashmap[1]
-// if (!linkedList.head) {
-//   console.log(linkedList);
-//   linkedList.addToHead({'deer', 'forest'})
-//   console.log(linkedList);
-// }
-
-
 module.exports = HashMap;
