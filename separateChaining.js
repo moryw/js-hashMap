@@ -23,20 +23,54 @@ class HashMap {
     if (!linkedList.head) {
       linkedList.addToHead({key:key, value:value})
       return;
-    } else {
-      linkedList.addToTail({key:key, value:value})
+    }
+
+    let current = linkedList.head
+
+    while (current) {
+      if (current.data.key === key) {
+        current.data = {key:key, value:value}
+        return
+      }
+
+      if (current.getNextNode() === null) {
+        const newTail = new Node({key:key, value:value})
+        current.setNextNode(newTail)
+        return
+      }
+
+      current = current.getNextNode()
     }
 
   }
 }
 
-const collision = new HashMap(3);
-collision.assign('deer', 'forest')
-console.log(collision.hashmap);
-console.log(collision.hashmap[2]);
-collision.assign('clock', 'house')
-console.log(collision.hashmap);
-console.log(collision.hashmap[2].head);
+const collision = new HashMap(5);
+// console.log(collision.hash('One'));
+// console.log(collision.hash('Two'));
+// console.log(collision.hash('Sixteen'));
+// console.log(collision.hash('Seventeen'));
+// console.log(collision.hash('Twenty'));
+
+collision.assign('Two', 'First')
+collision.assign('Sixteen', 'First')
+collision.assign('One', 'First')
+collision.assign('Twenty', 'First')
+collision.assign('Seventeen', 'First')
+collision.hashmap.forEach((item) => {
+  console.log(item.head);
+});
+
+collision.assign('deer', 'Second')
+collision.hashmap.forEach((item) => {
+  console.log(item.head);
+});
+
+// console.log(collision.hashmap[2].head.data);
+// collision.assign('deer', 'house')
+// console.log(collision.hashmap[2].head.data);
+// collision.assign('deer', 'garden')
+// console.log(collision.hashmap[2].head.data);
 
 // const linkedList = collision.hashmap[1]
 // if (!linkedList.head) {
