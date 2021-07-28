@@ -55,6 +55,17 @@ class HashMap {
     }
     return null
   }
+
+  remove(key) {
+    const arrayIndex = this.hash(key)
+    console.log(`The index is ${arrayIndex}`);
+    let list = this.hashmap[arrayIndex]
+    console.log(`The list is ${this.hashmap}`);
+    console.log(`The list head is ${list.head}`);
+
+    list.removeByData(key)
+
+  }
 }
 
 module.exports = HashMap;
